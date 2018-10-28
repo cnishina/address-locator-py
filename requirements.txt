@@ -1,0 +1,5 @@
+firebase-admin==2.13.0
+logging==0.4.9.6
+netifaces==0.10.7
+pytest==3.9.3
+requests==2.20.0
