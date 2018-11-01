@@ -24,17 +24,6 @@ class Location(object):
     if 'local_ip_address' in kwargs:
       self.local_ip_address = kwargs['local_ip_address']
 
-    # The Media Access Control (MAC) Address is a unique identifier
-    # assigned to network interfaces for communications at the data link
-    # layer of a network segment. MAC addresses are used as a network
-    # address for most IEEE 802 network technologies, including Ethernet
-    # and Wi-Fi.
-    #
-    # https://en.wikipedia.org/wiki/MAC_address
-    self.mac_address = None
-    if 'mac_address' in kwargs:
-      self.mac_address = kwargs['mac_address']
-
     # The External (Public) IP Address. The Internet Service Provider (ISP)
     # assigns you an external IP address when you connect to the Internet.
     # When your browser requests a webpage, it sends this IP address
@@ -44,6 +33,10 @@ class Location(object):
     self.external_ip_address = None
     if 'external_ip_address' in kwargs:
       self.external_ip_address = kwargs['external_ip_address']
+
+    self.metadata = None
+    if 'metadata' in kwargs:
+      self.metadata = kwargs['metadata']
 
   def to_json(self):
     """Convert this object to json.

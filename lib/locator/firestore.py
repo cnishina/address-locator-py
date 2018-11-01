@@ -7,6 +7,7 @@ import logger
 
 log = logger.getLogger(__name__)
 
+
 class FireStore(object):
 
   def __init__(self, base_path, database_url, service_account_json):
@@ -57,8 +58,7 @@ class FireStore(object):
       location: A location.Location object
     """
     log.info('update location %s/%s', self.base_path, save_location.name)
-    location_ref = db.reference(
-      '%s/%s' % (self.base_path, save_location.name))
+    location_ref = db.reference('%s/%s' % (self.base_path, save_location.name))
     location_ref.set(save_location.to_json())
   
   def remove_location(self, name):

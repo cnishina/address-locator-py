@@ -7,7 +7,6 @@ import unittest
 import uuid
 
 
-
 class FireStoreTest(unittest.TestCase):
   def setUp(self):
     service_account_json = os.path.abspath('serviceAccount.json')

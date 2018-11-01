@@ -26,11 +26,11 @@ def get_lan_interfaces():
   for interface in netifaces.interfaces():
     local_address = None
     mac_address = None
-    ifaddresses = netifaces.ifaddresses(interface)
+    ifaddresses = netifaces.ifaddresses(interface)    
     try:
       local_ip_address = ifaddresses[netifaces.AF_INET][0]['addr']
       mac_address = ifaddresses[netifaces.AF_LINK][0]['addr']
-      if mac_address and local_address:
+      if mac_address and local_ip_address:
         internal_addresses[interface] = {
           'local_ip_address': local_ip_address,
           'mac_address': mac_address
