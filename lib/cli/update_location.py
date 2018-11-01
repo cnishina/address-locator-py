@@ -25,6 +25,6 @@ update_location = location.Location(
   name=FLAGS.location_name,
   external_ip_address=network_utils.get_external_ip_address(),
   local_ip_address=network_utils.get_lan_interfaces(),
-  metadata=('address-locator-python, %s' % timestamp)
+  metadata={'project': 'address-locator-python', 'timestamp': timestamp}
 )
 fs.update_location(update_location)
